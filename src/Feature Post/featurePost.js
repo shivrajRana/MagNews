@@ -26,7 +26,7 @@ class featurePost extends Component {
 
                                         <span className="how1-child2">
                                             <span className="f1-s-4 cl11">
-                                                Jack Sims
+                                                {this.props.featurePost[0].author}
                                             </span>
 
                                             <span className="f1-s-3 cl11 m-rl-3">

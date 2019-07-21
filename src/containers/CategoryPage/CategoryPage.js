@@ -24,11 +24,11 @@ class CategoryPage extends Component {
         //     heading: "Sports",
         //     posts: [
         //         {
-                    // title:	"Donec metus orci, malesuada et lectus vitae",
-                    // date: 'Feb 18',
-                    // imgURL: "images/entertaiment-04.jpg",
-                    // author: "Thoams elbert eision",
-                    // type: 'Game'
+        //             title:	"Donec metus orci, malesuada et lectus vitae",
+        //             date: 'Feb 18',
+        //             imgURL: "images/entertaiment-04.jpg",
+        //             author: "Thoams elbert eision",
+        //             type: 'Game'
         //         }
         //     ]
         // };

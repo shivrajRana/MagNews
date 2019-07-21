@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 class content extends Component {
     render(){
         const renderPost = this.props.posts.map(val => {
+            let showContent = val.content.slice(0,5);
+            console.log(showContent);
             return (
                 <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
                     <Link to="blog_detail" onClick={() => this.props.setBlogDetails(val)} class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
@@ -34,7 +36,7 @@ class content extends Component {
                         </div>
 
                         <p class="f1-s-1 cl6 p-b-24">
-                            {val.content}
+                            {showContent}
                         </p>
 
                         <Link to="blog_detail" class="f1-s-1 cl9 hov-cl10 trans-03">

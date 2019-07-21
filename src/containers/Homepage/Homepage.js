@@ -49,10 +49,29 @@ class Homepage extends Component {
 
         // Feature Post logic
 
-        axios.get("https://magnews-f993a.firebaseio.com/feature_post.json").then(res => {
-            this.setState({ featurePost: Object.values(res.data)[0]})
-            // console.log(Object.values(res.data)[0]);
-        })
+        // axios.get("https://magnews-f993a.firebaseio.com/feature_post.json").then(res => {
+        //     this.setState({ featurePost: Object.values(res.data)[0]})
+        //     console.log(Object.values(res.data)[0]);
+        // })
+        axios.get("http://192.168.1.8/drupal8/hikers/popular-posts").then(res => {
+            console.log(res.data);
+            const resData = [];
+            res.data.forEach(element => {
+                let obj = {
+                    author: element.field_author_name[0].value,
+                    content: [element.body[0].value],
+                    tages: ['books'],
+                    date: element.field_news_date[0].value,
+                    imgURL: element.field_news_image[0].url,
+                    title: element.title[0].value,
+                    type: element.type[0].target_id
+                };
+                resData.push(obj);
+
+            });
+            console.log(resData);
+            this.setState({ featurePost: resData});
+        }).catch(err => console.log(err));
 
         // Post Logic 
         axios.get("https://magnews-f993a.firebaseio.com/post.json").then(res => {
